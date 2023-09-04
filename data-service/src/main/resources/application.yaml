@@ -1,0 +1,32 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 115939869668-iug85iudcmev0koj3dcgnhovn999240h.apps.googleusercontent.com
+            client-secret: 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
+  mvc:
+    pathmatch:
+       matching-strategy: ant_path_matcher
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/dataService
+logging:
+  level:
+    s7.Application: WARN
+    org.springframework.web: ERROR
+    com.netcracker.SendManager: DEBUG
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss} - %msg%n"
+    file: "%d{dd-MM-yyyy HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: D:\JavaProjects\DataService\src\main\resources\logs\data-service.log
+service:
+  max_retries_count: 5
