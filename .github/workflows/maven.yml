@@ -55,6 +55,6 @@ jobs:
           tags: latest
           registry: docker.io
           dockerfile: ./sender-service/Dockerfile
-          username: docker_username
+          username: Docker_username
           password: ${{ secrets.DOCKER_PASSWORD }}
 
