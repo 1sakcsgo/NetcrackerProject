@@ -31,30 +31,30 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           context: ./data-service
-          image: ivandvurechenskiy/data-service
+          image: name-repo/data-service
           tags: latest
           registry: docker.io
           dockerfile: ./data-service/Dockerfile
-          username: ivandvurechenskiy
+          username: docker_username
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build & Push Docker Image Send-Manager
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           context: ./send-manager
-          image: ivandvurechenskiy/new-send-manager
+          image: name-repo/new-send-manager
           tags: latest
           registry: docker.io
           dockerfile: ./send-manager/Dockerfile
-          username: ivandvurechenskiy
+          username: docker_username
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build & Push Docker Image sender-service
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           context: ./sender-service
-          image: ivandvurechenskiy/new-sender-service
+          image: docker_username/new-sender-service
           tags: latest
           registry: docker.io
           dockerfile: ./sender-service/Dockerfile
-          username: ivandvurechenskiy
+          username: docker_username
           password: ${{ secrets.DOCKER_PASSWORD }}
 
